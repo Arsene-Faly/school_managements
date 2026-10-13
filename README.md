@@ -25,3 +25,6 @@ Models
 --student.py
 
 Admin
+
+https://blog.hopesformation.com/
+1bd6db6b22af

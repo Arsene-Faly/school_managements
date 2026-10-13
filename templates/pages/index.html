@@ -1,11 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>PAGE D'INDEX</h1>
-</body>
-</html>
+{% extends "layouts/base.html" %}
+
+{% block titre %}Accueil - ÉcolePlus{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">Bienvenue à ÉcolePlus</span>
+
+            <h1>
+                Construisons ensemble
+                <span>l'avenir de nos élèves.</span>
+            </h1>
+
+            <p>
+                Une école moderne qui accompagne chaque élève
+                dans son parcours scolaire et son développement personnel.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/register/" class="btn btn-primary">
+                    Inscrire un élève
+                </a>
+
+                <a href="/apropos/" class="btn btn-outline">
+                    Découvrir l'école
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="school-icon">🎓</div>
+
+            <h3>Éducation & Excellence</h3>
+
+            <p>
+                Un environnement adapté pour apprendre,
+                progresser et réussir.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="badge">Nos avantages</span>
+
+            <h2>Pourquoi choisir notre école ?</h2>
+
+            <p>
+                Nous mettons tout en œuvre pour offrir
+                une éducation de qualité.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+
+                <h3>Éducation de qualité</h3>
+
+                <p>
+                    Des programmes adaptés aux besoins
+                    et au niveau de chaque élève.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">👨‍🏫</div>
+
+                <h3>Enseignants qualifiés</h3>
+
+                <p>
+                    Une équipe pédagogique engagée
+                    dans la réussite des élèves.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🏆</div>
+
+                <h3>Accompagnement</h3>
+
+                <p>
+                    Un suivi régulier pour aider chaque
+                    élève à atteindre ses objectifs.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="stats-section">
+
+    <div class="container stats">
+
+        <div>
+            <h2>500+</h2>
+            <p>Élèves</p>
+        </div>
+
+        <div>
+            <h2>30+</h2>
+            <p>Enseignants</p>
+        </div>
+
+        <div>
+            <h2>15+</h2>
+            <p>Années d'expérience</p>
+        </div>
+
+        <div>
+            <h2>95%</h2>
+            <p>Réussite</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

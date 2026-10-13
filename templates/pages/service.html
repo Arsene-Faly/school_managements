@@ -1,11 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>PAGE DE SERVICE</h1>
-</body>
-</html>
+{% extends "layouts/base.html" %}
+
+{% block titre %}Services - ÉcolePlus{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <div class="container">
+
+        <span class="badge">Nos services</span>
+
+        <h1>Des services pensés pour les élèves</h1>
+
+        <p>
+            Découvrez les différents services proposés
+            par notre établissement.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Enseignement</h3>
+                <p>
+                    Des cours adaptés aux différents niveaux
+                    scolaires et aux besoins des élèves.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👨‍🎓</div>
+                <h3>Suivi des élèves</h3>
+                <p>
+                    Suivi pédagogique et accompagnement
+                    durant toute l'année scolaire.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Évaluations</h3>
+                <p>
+                    Organisation des devoirs, examens
+                    et évaluations scolaires.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👪</div>
+                <h3>Communication parents</h3>
+                <p>
+                    Une communication régulière entre
+                    l'école, les élèves et les parents.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Gestion numérique</h3>
+                <p>
+                    Gestion moderne des élèves, classes,
+                    enseignants et années scolaires.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏫</div>
+                <h3>Vie scolaire</h3>
+                <p>
+                    Un environnement favorable à
+                    l'apprentissage et à l'épanouissement.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

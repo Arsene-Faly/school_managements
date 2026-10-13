@@ -1,0 +1,75 @@
+{% extends "layouts/base_admin.html" %} {% block titre %}Année scolaire{%
+endblock %} {% block titre_page %}Année scolaire{% endblock %} {% block desc
+%}Gestion des années scolaires{% endblock %} {% block btn %}
+<a href="#form" class="btn btn-primary"> Ajouter une année scolaire </a>
+{% endblock %} {% block content %}
+
+<section class="section">
+  <div class="card">
+    <h2 style="font-size: 1.1rem; margin-bottom: 14px">
+      Liste des années scolaires
+    </h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for school_year in school_years %}
+          <tr>
+            <td>{{ school_year.id }}</td>
+            <td>{{ school_year.name }}</td>
+            <td>{{ school_year.start_date|date:"Y-m-d" }}</td>
+            <td>{{ school_year.end_date|date:"Y-m-d" }}</td>
+
+            <td>
+              {% if school_year.is_active %}
+              <span class="badge ok">Active</span>
+              {% else %}
+              <span class="badge danger">Inactive</span>
+              {% endif %}
+            </td>
+
+            <td class="actions">
+              <a href="#" class="btn btn-primary btn-sm">Voir</a>
+              <a href="#" class="btn btn-secondary btn-sm">Modifier</a>
+              <a href="#" class="btn btn-danger btn-sm">Supprimer</a>
+
+              <form
+                method="post"
+                action="{% url 'school_year_switch' school_year.id %}"
+                style="display: inline"
+              >
+                {% csrf_token %}
+
+                <button
+                  type="submit"
+                  class="switch-btn {% if school_year.is_active %}active{% endif %}"
+                  title="{% if school_year.is_active %}Année active{% else %}Activer cette année{% endif %}"
+                  {%if school_year.is_active %}disabled{%endif%}>
+                  <span></span>
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6">Aucune année scolaire enregistrée.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
