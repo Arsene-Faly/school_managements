@@ -1,0 +1,93 @@
+{% extends "layouts/base_admin.html" %}
+
+{% block titre %}Ajouter une année scolaire{% endblock %}
+
+{% block titre_page %}Ajouter une année scolaire{% endblock %}
+
+{% block desc %}Créer une nouvelle année scolaire{% endblock %}
+
+{% block btn %}
+    <a href="{% url 'school_year' %}" class="btn btn-secondary">
+        Retour
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="card">
+
+        <form method="POST" class="form">
+            {% csrf_token %}
+
+            <div class="two-cols">
+
+                <div class="field {% if errors.name %}error{% endif %}">
+                    <label for="name">Nom de l'année scolaire</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Ex : 2026-2027"
+                        value="{{ form_data.name|default:'' }}"
+                        required
+                    >
+
+                    {% if errors.name %}
+                        <span class="hint">{{ errors.name }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="field {% if errors.start_date %}error{% endif %}">
+                    <label for="start_date">Date de début</label>
+
+                    <input
+                        type="date"
+                        id="start_date"
+                        name="start_date"
+                        value="{{ form_data.start_date|default:'' }}"
+                        required
+                    >
+
+                    {% if errors.start_date %}
+                        <span class="hint">{{ errors.start_date }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="field {% if errors.end_date %}error{% endif %}">
+                    <label for="end_date">Date de fin</label>
+
+                    <input
+                        type="date"
+                        id="end_date"
+                        name="end_date"
+                        value="{{ form_data.end_date|default:'' }}"
+                        required
+                    >
+
+                    {% if errors.end_date %}
+                        <span class="hint">{{ errors.end_date }}</span>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <a href="{% url 'school_year' %}" class="btn btn-ghost">
+                    Annuler
+                </a>
+
+                <button type="submit" class="btn btn-primary">
+                    Enregistrer
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
